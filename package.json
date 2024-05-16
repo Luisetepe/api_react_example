@@ -1,29 +1,40 @@
 {
-  "name": "vite-min-template",
+  "name": "api_react_example",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
+    "dev:api": "bun run --hot src/api.init.ts",
+    "dev:app": "vite dev",
     "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:explore": "drizzle-kit studio"
   },
   "dependencies": {
     "@mantine/core": "7.8.1",
     "@mantine/hooks": "7.8.1",
-    "@mantine/vanilla-extract": "7.8.1",
-    "@vanilla-extract/css": "^1.14.1",
+    "@tabler/icons-react": "^3.3.0",
+    "drizzle-orm": "^0.30.10",
+    "hono": "^4.3.6",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.4",
+    "postgres": "^3.4.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1",
+    "sort-by": "^1.2.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@libsql/client": "^0.6.0",
+    "@types/bun": "^1.1.2",
+    "@types/node": "^20.12.12",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "@vanilla-extract/vite-plugin": "^4.0.6",
     "@vitejs/plugin-react": "^4.2.1",
+    "drizzle-kit": "^0.21.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
@@ -33,5 +44,6 @@
     "typescript": "^5.4.2",
     "vite": "^5.1.6"
   },
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "bun@1.1.8",
+  "trustedDependencies": ["es5-ext"]
 }

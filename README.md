@@ -1,5 +1,10 @@
-# Mantine + Vite + Vanilla extract template
+# Hono Web Api + React Frontend
 
-Get started with the template by clicking `Use this template` button on the top of the page.
+Example .env file:
 
-[Documentation](https://mantine.dev/styles/vanilla-extract/)
+```
+ENVIRONMENT=development
+DATABASE_URL=file:.localdb/instruments_database.db
+DATABASE_FILE_PATH=.localdb/instruments_database.db
+API_PORT=3000
+```
