@@ -13,13 +13,16 @@
     "db:explore": "drizzle-kit studio"
   },
   "dependencies": {
+    "@hono/zod-validator": "^0.2.1",
     "@mantine/core": "7.8.1",
+    "@mantine/form": "^7.9.1",
     "@mantine/hooks": "7.8.1",
     "@tabler/icons-react": "^3.3.0",
     "drizzle-orm": "^0.30.10",
     "hono": "^4.3.6",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
+    "nanoid": "^5.0.7",
     "postgres": "^3.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -28,6 +31,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.7.3",
     "@libsql/client": "^0.6.0",
     "@types/bun": "^1.1.2",
     "@types/node": "^20.12.12",
@@ -45,5 +49,5 @@
     "vite": "^5.1.6"
   },
   "packageManager": "bun@1.1.8",
-  "trustedDependencies": ["es5-ext"]
+  "trustedDependencies": ["@biomejs/biome", "core-js", "es5-ext", "esbuild"]
 }

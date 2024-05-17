@@ -43,7 +43,7 @@ export function InstrumentsListPage() {
 
 							<Group justify="space-between" mt="md" mb="xs">
 								<Text fw={500}>{instrument.name}</Text>
-								<Badge color="pink">Nuevo</Badge>
+								<Badge color="yellow">Ofertón</Badge>
 							</Group>
 
 							<ScrollArea mih={40} mah={100}>
