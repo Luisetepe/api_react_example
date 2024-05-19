@@ -4,8 +4,11 @@ import type { AddInstrumentRequest } from 'lib/models/requests/add-instrument.re
 import { nanoid } from 'nanoid'
 
 export async function addInstrumentsCommand(dbContext: DbContext, request: AddInstrumentRequest) {
-	await dbContext.insert(instrumentsTable).values({
+	const newInstrument = {
 		...request,
 		id: nanoid()
-	})
+	}
+	await dbContext.insert(instrumentsTable).values(newInstrument)
+
+	return newInstrument
 }

@@ -3,6 +3,7 @@ import { getAllInstrumentsQuery } from '@api/actions/instruments/get-all-instrum
 import { getInstrumentByIdQuery } from '@api/actions/instruments/get-instrument-by-id.query.ts'
 import type { Context } from '@api/api.definition'
 import { OpenAPIHono, createRoute } from '@hono/zod-openapi'
+import { addInstrumentResponseSchema } from '@lib/models/responses/add-instrument.response'
 import { getAllInstrumentsResponseSchema } from '@lib/models/responses/get-all-instruments.response'
 import { getInstrumentByIdResponseSchema } from '@lib/models/responses/get-instrument-by.id.response'
 import { addInstrumentRequestSchema } from 'lib/models/requests/add-instrument.request.ts'
@@ -85,6 +86,11 @@ app.openapi(
 		},
 		responses: {
 			201: {
+				content: {
+					'application/json': {
+						schema: addInstrumentResponseSchema
+					}
+				},
 				description: 'The instrument was added successfully'
 			},
 			400: {
@@ -95,9 +101,12 @@ app.openapi(
 	async (c) => {
 		const db = c.get('db')
 		const instrument = c.req.valid('json')
-		await addInstrumentsCommand(db, instrument)
+		const newInstrument = await addInstrumentsCommand(db, instrument)
 
-		return c.json(null, 201)
+		const location = c.req.url.replace(c.req.path, `/api/instruments/${newInstrument.id}`)
+		c.res.headers.set('Location', location)
+
+		return c.json(newInstrument, 201)
 	}
 )
 

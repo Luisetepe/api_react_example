@@ -27,6 +27,6 @@
 			"@lib/*": ["lib/*"]
 		}
 	},
-	"include": ["src", "drizzle.config.ts", "migrator.ts"],
+	"include": ["src", "test", "drizzle.config.ts"],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }
