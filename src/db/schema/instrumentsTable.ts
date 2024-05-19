@@ -1,7 +1,7 @@
 import { sql } from 'drizzle-orm'
 import { real, sqliteTable, text, uniqueIndex } from 'drizzle-orm/sqlite-core'
 
-export const instruments = sqliteTable(
+export const instrumentsTable = sqliteTable(
 	'instruments',
 	{
 		id: text('id', { length: 22 }).primaryKey(),

@@ -13,6 +13,8 @@
     "db:explore": "drizzle-kit studio"
   },
   "dependencies": {
+    "@hono/swagger-ui": "^0.2.2",
+    "@hono/zod-openapi": "^0.12.2",
     "@hono/zod-validator": "^0.2.1",
     "@mantine/core": "7.8.1",
     "@mantine/form": "^7.9.1",

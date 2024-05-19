@@ -1,7 +1,7 @@
 import { Database } from 'bun:sqlite'
 import { drizzle } from 'drizzle-orm/bun-sqlite'
 import env from 'env'
-import * as instrumentsSchema from './schema/instruments'
+import * as instrumentsSchema from './schema/instrumentsTable'
 
 const client = new Database(env.DATABASE_FILE_PATH, { create: true })
 

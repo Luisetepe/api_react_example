@@ -23,7 +23,8 @@
 		"paths": {
 			"@app/*": ["app/*"],
 			"@api/*": ["api/*"],
-			"@db/*": ["db/*"]
+			"@db/*": ["db/*"],
+			"@lib/*": ["lib/*"]
 		}
 	},
 	"include": ["src", "drizzle.config.ts", "migrator.ts"],
